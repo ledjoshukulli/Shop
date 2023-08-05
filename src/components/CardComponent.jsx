@@ -11,21 +11,29 @@ const CardComponent = ({image,title,description,price}) => {
     <Card sx={{ maxWidth: 300 }}>
       <CardMedia
         component="img"
-        alt="green iguana"
+        alt={title}  
         height="200"
         image={image}
+        sx={{ objectFit: 'contain' }}
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div" >{title}
-         
+      <CardContent sx={{ height: '100px' }}>
+        <Typography gutterBottom variant="h5" component="div">
+          {title}
         </Typography>
-        <Typography variant="body2" color="text.secondary" >{description}
+        <Typography variant="body2" color="text.secondary">
+          {description}
         </Typography>
-        <Typography variant="body2" color="text.secondary">{price}
+        <Typography variant="body2" color="text.secondary">
+          ${price.toFixed(2)}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Add to Cart</Button>
+      <CardActions sx={{ justifyContent: 'center' }}>
+      <Button
+          size="small"
+          variant="contained" 
+          color="primary"     
+          sx={{ borderRadius: '8px' }} 
+        >Add to Cart</Button>
       </CardActions>
     </Card>
   );
