@@ -3,10 +3,9 @@ import { Card } from '@mui/material';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-const CardComponent = ({image,title,description,price}) => {
+const CardComponent = ({image,title,description,price,buttonContent }) => {
   return (
     <Card sx={{ maxWidth: 300 }}>
       <CardMedia
@@ -28,12 +27,7 @@ const CardComponent = ({image,title,description,price}) => {
         </Typography>
       </CardContent>
       <CardActions sx={{ justifyContent: 'center' }}>
-      <Button
-          size="small"
-          variant="contained" 
-          color="primary"     
-          sx={{ borderRadius: '8px' }} 
-        >Add to Cart</Button>
+        {buttonContent}
       </CardActions>
     </Card>
   );
