@@ -23,7 +23,7 @@ const CardComponent = ({image,title,description,price,buttonContent }) => {
           {description}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          ${price.toFixed(2)}
+          ${price}
         </Typography>
       </CardContent>
       <CardActions sx={{ justifyContent: 'center' }}>

@@ -1,4 +1,3 @@
-// Navbar.js
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
 import { Link } from 'react-router-dom';
@@ -13,6 +12,9 @@ const Navbar = () => {
             Home
           </Typography>
           <div sx={{ display: 'flex' }}>
+          <Button color="inherit" component={Link} to="/shop" sx={{ marginRight: '10px' }}>
+              Shop
+            </Button>
             <Button color="inherit" component={Link} to="/shop/manager" sx={{ marginRight: '10px' }}>
               Manager
             </Button>

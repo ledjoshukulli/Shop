@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import { Button, Container, Grid, Pagination, PaginationItem } from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { useNavigate } from "react-router-dom";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -26,8 +27,11 @@ const Manager = () => {
     setProducts(updatedProducts);
   };
   
+  const navigate = useNavigate(); 
+
   const handleEdit = (productId) => {
-    console.log(`Editing product with ID: ${productId}`);
+
+    navigate(`/shop/edit/${productId}`);
   };
 
   return (
