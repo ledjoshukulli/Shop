@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import CardComponent from "../components/CardComponent";
-import products from "../data/Products";
 import Navbar from "../components/Navbar";
 import { Button, Container, Grid, Pagination, PaginationItem } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { ShopContext } from "../context/ShopContext";
 
 const ITEMS_PER_PAGE = 6;
 
 const Shop = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const {products}=useContext(ShopContext);
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;

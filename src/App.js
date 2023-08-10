@@ -6,9 +6,11 @@ import Manager from './containers/Manager';
 import User from './containers/User';
 import Cart from './containers/Cart';
 import Edit from './containers/Edit';
+import { ShopProvider } from './context/ShopContext';
 
 function App() {
   return (
+    <ShopProvider>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/shop" element={<Shop />} />
@@ -17,6 +19,7 @@ function App() {
         <Route path="/shop/user" element={<User />} />
         <Route path="/shop/cart" element={<Cart />} />
       </Routes>
+      </ShopProvider>
   );
 }
 

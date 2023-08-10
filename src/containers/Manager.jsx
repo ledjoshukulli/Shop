@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import CardComponent from "../components/CardComponent";
-import productsData from "../data/Products";
 import Navbar from "../components/Navbar";
 import { Button, Container, Grid, Pagination, PaginationItem } from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useNavigate } from "react-router-dom";
+import { ShopContext } from "../context/ShopContext";
+
 
 const ITEMS_PER_PAGE = 6;
 
 const Manager = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [products, setProducts] = useState(productsData); 
-
+  const {handleDelete,products}=useContext(ShopContext);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
 
@@ -22,10 +22,7 @@ const Manager = () => {
     setCurrentPage(newPage);
   };
 
-  const handleDelete = (productId) => {
-    const updatedProducts = products.filter(product => product.id !== productId);
-    setProducts(updatedProducts);
-  };
+
   
   const navigate = useNavigate(); 
 
